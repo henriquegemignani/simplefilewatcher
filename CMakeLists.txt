@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
 project(simplefilewatcher)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+option(BUILD_DEMO "Build demo application" OFF)
 
 include_directories(include)
 
@@ -25,5 +25,7 @@ set(SOURCES
 
 add_library(simplefilewatcher STATIC ${SOURCES})
 
-add_executable(simple-demo SimpleDemo.cpp)
-target_link_libraries(simple-demo simplefilewatcher)
+if(BUILD_DEMO)
+    add_executable(simple-demo SimpleDemo.cpp)
+    target_link_libraries(simple-demo simplefilewatcher)
+endif()
