@@ -264,6 +264,6 @@ namespace FW
 		watch->mFileWatchListener->handleFileAction(watch->mWatchid, watch->mDirName, filename, fwAction);
 	}
 
-};//namespace FW
+}//namespace FW
 
 #endif//_WIN32

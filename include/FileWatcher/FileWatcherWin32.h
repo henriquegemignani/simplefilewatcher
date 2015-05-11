@@ -78,7 +78,7 @@ namespace FW
 
 	};//end FileWatcherWin32
 
-};//namespace FW
+}//namespace FW
 
 #endif//FILEWATCHER_PLATFORM_WIN32
 
