@@ -1,11 +1,8 @@
-# Test for minimum required CMake version 2.8.12
 cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 
 project(simplefilewatcher)
 
 option(BUILD_DEMO "Build demo application" OFF)
-
-include_directories(include)
 
 set(HEADERS
     include/FileWatcher/FileWatcher.h
@@ -24,6 +21,7 @@ set(SOURCES
 )
 
 add_library(simplefilewatcher STATIC ${SOURCES})
+target_include_directories(simplefilewatcher PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 if(BUILD_DEMO)
     add_executable(simple-demo SimpleDemo.cpp)
